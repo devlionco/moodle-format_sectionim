@@ -444,9 +444,12 @@ class format_sectionim extends format_base {
         );
 
         // define display or not "attendanceinfo show/hide setting"
-        $attmodid = $DB->get_record('modules', array('name' => 'attendance'), 'id')->id; // get attendance module id in system
-        $att = $DB->get_record('course_modules', array('course' => $course->id, 'module' => $attmodid, 'deletioninprogress' => 0), 'instance', IGNORE_MULTIPLE); // get first attedndance instance on current course
-        if ($att) {
+        $attmod = $DB->get_record('modules', array('name' => 'attendance'), 'id'); // get attendance module id in system
+        if ($attmod and isset($attmod->id)) {
+            $attmodid = $attmod->id;
+            $att = $DB->get_record('course_modules', array('course' => $course->id, 'module' => $attmodid, 'deletioninprogress' => 0), 'instance', IGNORE_MULTIPLE); // get first attedndance instance on current course
+        }
+        if (isset($att) and $att) {
             $courseformatoptions['displayattendanceinfo'] = array(
                     'label' => new lang_string('displayattendanceinfo', 'format_sectionim'),
                     'element_type' => 'select',

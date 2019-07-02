@@ -2,7 +2,7 @@ define(['jquery'], function($) {
 'use strict';
 
 const MAINCLASS = `format-sectionim`;
-const mainBlock = document.querySelector(`.format-sectionim .card`);
+const mainBlock = document.querySelector(`.format-sectionim .course-content`);
 
 const toggleSection = (target) => {
   target.parentNode.classList.toggle(`section-opened`);
