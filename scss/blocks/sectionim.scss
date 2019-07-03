@@ -236,6 +236,24 @@
             .mod-indent > div {
                 width: 100%;
             }
+            .activityinstance .activityicon_wrapper.mod_gray,
+            .activityinstance .activityicon_wrapper.mod_green,
+            .activityinstance .activityicon_wrapper.mod_orange,
+            .activityinstance .activityicon_wrapper.mod_red {
+                display: flex!important;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid transparent;
+                border-radius: 50%;
+                width: 55px;
+                height: 55px;
+                margin-right: 6px;
+                margin-left: 20px;
+                img.activityicon {
+                    margin: 0 auto;
+                }
+
+            }
 
             img.activityicon {
                 margin-left: 28px;
